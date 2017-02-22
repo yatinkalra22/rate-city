@@ -1,9 +1,17 @@
 # RateCity Developer Test
 
-Your task is to build a ReactJS powered page to:
+Your task is to build a ReactJS powered 
+
+Test 1: 
+Product listing Page:
 - request a list of items from a JSON REST api
 - render the table of results to page
 - add ability to paginate the collection
+
+Test 2:
+Compare Rate Component
+- Allow user to input interest rates
+- Render graph to show where user enterrate falls
 
 Our expectations:
 - Redux for state management (where necessary)
