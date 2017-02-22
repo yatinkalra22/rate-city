@@ -11,7 +11,7 @@ Product listing Page:
 Test 2:
 Compare Rate Component
 - Allow user to input interest rates
-- Render graph to show where user enterrate falls
+- Render graph to show where user entered rate compare against the products returned by the APIS
 
 Our expectations:
 - Redux for state management (where necessary)
