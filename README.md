@@ -8,6 +8,8 @@ Product listing Page:
 - render the table of results to page
 - add ability to paginate the collection
 
+## OR
+
 Test 2:
 Compare Rate Component
 - Allow user to input interest rates
