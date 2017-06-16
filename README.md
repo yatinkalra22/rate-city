@@ -8,12 +8,12 @@ Product listing Page:
 - render the table of results to page
 - add ability to paginate the collection
 
-## OR
+OR
 
 Test 2:
 Compare Rate Component
 - Allow user to input interest rates
-- Render graph to show where user entered rate compare against the products returned by the APIS
+- Render graph to show where is user entered rate compare against the products returned by the APIS
 
 Our expectations:
 - Redux for state management (where necessary)
