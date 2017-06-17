@@ -26,6 +26,8 @@ Use a starter kit of your choice.
 Feel free to use npm packages to help you achieve a result.
 
 ## Deliverable
+
+#### Please don't push branches,
 Submit a pull request against this repository. Developers will review your code and ask you questions in the pull request.
 
 We will pull your code and execute the following commands:
