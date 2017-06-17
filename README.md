@@ -43,7 +43,12 @@ API Endpoint:<br />
 Paginate by passing the page parameter:<br />
 `https://api-staging.ratecity.com.au/home-loans?page=2`
 
-API Key: x-api-key: MaDX2Oo31g3FLAHesYHtGa3rHe40uqkJ8TmbPJn9
+API Key, 
+```
+  {
+    x-api-key: MaDX2Oo31g3FLAHesYHtGa3rHe40uqkJ8TmbPJn9 
+  }
+```
 
 API will return you an object that looks something like this:
 ```json
