@@ -8,17 +8,23 @@ Product listing Page:
 - render the table of results to page
 - add ability to paginate the collection
 
-OR
 
 Test 2:
 Compare Rate Component
 - Allow user to input interest rates
 - Render graph to show where is user entered rate compare against the products returned by the APIS
 
+
+Test 3:
+Build Similar Products component as per desing provided here :
+- Component neeeds to responsive
+- Data needs to come from API provided above
+
+
 Our expectations:
 - Redux for state management (where necessary)
 - Good component structure
-- ES6
+- ES6 
 - Surprise us
 
 ## Notes
