@@ -17,8 +17,8 @@ Compare Rate Component
 
 Test 3:
 Build Similar Products component as per desing provided here :
-- Component neeeds to responsive
-- Data needs to come from API provided above
+- Component needs to be responsive
+- Data needs to come from API provided below
 
 
 Our expectations:
