@@ -46,17 +46,10 @@ These commands should start a Node.JS server and serve your app in development m
 ## API Detail
 
 API Endpoint:<br />
-`https://api-staging.ratecity.com.au/home-loans`
+`http://blaze.ratecity.com.au/api/search/home-loans`
 
 Paginate by passing the page parameter:<br />
-`https://api-staging.ratecity.com.au/home-loans?page=2`
-
-API Key, 
-```
-  {
-    x-api-key: MaDX2Oo31g3FLAHesYHtGa3rHe40uqkJ8TmbPJn9 
-  }
-```
+`http://blaze.ratecity.com.au/api/search/home-loans?page=2`
 
 API will return you an object that looks something like this:
 ```json
