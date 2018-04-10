@@ -8,12 +8,14 @@ Product listing Page:
 - render the table of results to page
 - add ability to paginate the collection
 
+========================================= OR ========================================
 
 Test 2:
 Compare Rate Component
 - Allow user to input interest rates
-- Render graph to show where is user entered rate compare against the products returned by the APIS
+- Render graph to show where the user entered rate is compared against the products returned by the APIS
 
+========================================= OR =========================================
 
 Test 3:
 Build Similar Products component as per desing provided here :
