@@ -51,7 +51,7 @@ API Endpoint:<br />
 `https://blaze.ratecity.com.au/api/search/home-loans`
 
 Paginate by passing the page parameter:<br />
-`http://blaze.ratecity.com.au/api/search/home-loans?page=2`
+`https://blaze.ratecity.com.au/api/search/home-loans?page=2`
 
 API will return you an object that looks something like this:
 ```json
