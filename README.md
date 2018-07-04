@@ -48,7 +48,7 @@ These commands should start a Node.JS server and serve your app in development m
 ## API Detail
 
 API Endpoint:<br />
-`http://blaze.ratecity.com.au/api/search/home-loans`
+`https://blaze.ratecity.com.au/api/search/home-loans`
 
 Paginate by passing the page parameter:<br />
 `http://blaze.ratecity.com.au/api/search/home-loans?page=2`
