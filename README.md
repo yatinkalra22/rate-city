@@ -4,7 +4,7 @@ Your task is to build a ReactJS powered
 
 Test 1: 
 Product listing Page:
-- request a list of items from a JSON REST api
+- request a list of items using JSON REST api detailed below.
 - render the table of results to page
 - add ability to paginate the collection
 
