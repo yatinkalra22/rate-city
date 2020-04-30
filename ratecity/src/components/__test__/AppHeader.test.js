@@ -25,4 +25,22 @@ describe("AppHeader Component", () => {
       "NEXT HOME BUYER"
     );
   });
+
+  it("should have a default selected value as All", () => {
+    expect(wrapper.state().selectedMenuOption).toBe("All");
+  });
+  it("should should be clickable and state must change to the selected value", () => {
+    wrapper.find("#all-testcase").simulate("click");
+    expect(wrapper.state().selectedMenuOption).toBe("All");
+    wrapper.find("#refinance-testcase").simulate("click");
+    expect(wrapper.state().selectedMenuOption).toBe("REFINANCE");
+    wrapper.find("#fixed-rate-testcase").simulate("click");
+    expect(wrapper.state().selectedMenuOption).toBe("FIXED RATE");
+    wrapper.find("#first-home-buyer-testcase").simulate("click");
+    expect(wrapper.state().selectedMenuOption).toBe("FIRST HOME BUYER");
+    wrapper.find("#nvestor-testcase").simulate("click");
+    expect(wrapper.state().selectedMenuOption).toBe("NVESTOR");
+    wrapper.find("#next-home-buyer-testcase").simulate("click");
+    expect(wrapper.state().selectedMenuOption).toBe("NEXT HOME BUYER");
+  });
 });

@@ -3,16 +3,22 @@
   border-bottom: 1px solid black;
   padding: 10px;
 }
-.headline-text {
+.App-header-container .headline-text {
   font-size: 18px;
 }
-.headline-menu div {
+.App-header-container .headline-menu div {
   font-size: 10px;
   padding: 5px;
-  color: #e7c9c9;
 }
-.headline-menu {
+.App-header-container .headline-menu {
   display: flex;
+}
+
+.App-header-container .selectedMenu {
+  color: black;
+}
+.App-header-container .unselectedMenu {
+  color: #e7c9c9;
 }
 
 @media (min-width: 480px) {
