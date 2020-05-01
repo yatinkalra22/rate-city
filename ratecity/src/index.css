@@ -12,13 +12,16 @@
 ::-webkit-scrollbar {
   display: none;
 }
+:root {
+  --primary-color: #f7f7f7;
+  --secondary-color: blue;
+}
 
 body {
   margin: 0px;
+  background-color: var(--primary-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f7f7f7;
-  /* background-color: var(--page-background); */
 }
 
 code {

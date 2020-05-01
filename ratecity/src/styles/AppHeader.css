@@ -1,4 +1,4 @@
-.App-header-container {
+/* .App-header-container {
   justify-content: space-between;
   border-bottom: 1px solid rgb(79, 111, 180);
   padding: 2px 10px;
@@ -50,5 +50,43 @@
   .App-header-container .headline-menu div {
     font-size: 12px;
     padding: 15px 10px 0 10px;
+  }
+} */
+
+.App-header-container {
+  border-bottom: 1px solid lightblue;
+}
+.App-header-container .headline-text {
+  font-size: 15px;
+  text-align: center;
+  font-weight: 600;
+  padding: 10px;
+}
+.App-header-container .headline-menu {
+  display: flex;
+  font-size: 10px;
+  justify-content: space-between;
+  color: #333333;
+}
+
+.App-header-container .selectedMenu {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+.App-header-container .unselectedMenu {
+  color: #473d3d;
+}
+
+@media (min-width: 580px) {
+  .App-header-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .App-header-container .headline-menu {
+    font-size: 12px;
+    padding: 10px;
+  }
+  .App-header-container .headline-menu > div {
+    padding: 0 5px;
   }
 }
