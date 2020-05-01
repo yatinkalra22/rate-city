@@ -3,6 +3,6 @@ import "../styles/LoanProductList.css";
 
 export default class LoanProductList extends Component {
   render() {
-    return <div>List of Loan products</div>;
+    return <div className="LoanProductList-container"></div>;
   }
 }

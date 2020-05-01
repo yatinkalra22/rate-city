@@ -17,6 +17,7 @@ body {
   margin: 0px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f7f7f7;
   /* background-color: var(--page-background); */
 }
 

@@ -1,28 +1,54 @@
 .App-header-container {
   justify-content: space-between;
-  border-bottom: 1px solid black;
-  padding: 10px;
+  border-bottom: 1px solid rgb(79, 111, 180);
+  padding: 2px 10px;
 }
 .App-header-container .headline-text {
-  font-size: 18px;
+  font-size: 15px;
+  text-align: center;
 }
 .App-header-container .headline-menu div {
-  font-size: 10px;
-  padding: 5px;
+  font-size: 8px;
+  padding: 15px 5px 0 5px;
 }
 .App-header-container .headline-menu {
   display: flex;
+  text-align: center;
 }
 
 .App-header-container .selectedMenu {
-  color: black;
+  color: blue;
+  font-weight: 600;
+  font-size: 10px;
 }
 .App-header-container .unselectedMenu {
-  color: #e7c9c9;
+  color: #473d3d;
 }
 
+@media (min-width: 375px) {
+  .App-header-container .headline-text {
+    font-size: 16px;
+  }
+  .App-header-container .headline-menu div {
+    font-size: 10px;
+  }
+}
 @media (min-width: 480px) {
   .App-header-container {
     display: flex;
+  }
+  .App-header-container .headline-menu div {
+    font-size: 10px;
+    padding: 5px;
+  }
+}
+@media (min-width: 850px) {
+  .App-header-container .headline-text {
+    font-size: 15px;
+    padding: 15px 8px 0 8px;
+  }
+  .App-header-container .headline-menu div {
+    font-size: 12px;
+    padding: 15px 10px 0 10px;
   }
 }

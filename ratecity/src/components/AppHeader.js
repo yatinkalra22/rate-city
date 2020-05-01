@@ -6,11 +6,14 @@ export default class AppHeader extends Component {
     selectedMenuOption: "All",
   };
 
-  handleMenuClick = (e) => {};
+  handleMenuClick = (e) => {
+    console.log();
+  };
+
   render() {
     const { selectedMenuOption } = this.state;
     return (
-      <div className="App-header-container">
+      <nav className="App-header-container">
         <div className="headline-text" id="top-home-loan-testcase">
           Top Home Loan Products
         </div>
@@ -92,7 +95,7 @@ export default class AppHeader extends Component {
             NEXT HOME BUYER
           </div>
         </div>
-      </div>
+      </nav>
     );
   }
 }
