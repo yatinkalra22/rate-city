@@ -20,7 +20,7 @@ describe("HomeLoanProducts action testing", () => {
   //  [Yatin] 02/05/2020 CREATED - [Positive 200 OK]Calling the url with action type as GET_HOME_LOAN_PRODUCTS
   //   and expecting 200 OK from the server
   it("[GET_HOME_LOAN_PRODUCTS] [200 OK] should call an action with type GET_HOME_LOAN_PRODUCTS and the payload should be same as the API response when the response is 20*", () => {
-    const responseOfApi = [{}];
+    const responseOfApi = { data: {} };
     const pageNumber = 1;
     moxios.stubRequest(url + pageNumber, {
       status: 200,

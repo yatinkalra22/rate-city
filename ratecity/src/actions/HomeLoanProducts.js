@@ -8,7 +8,7 @@ export const getHomeLoanProducts = (pageNumber) => (dispatch) => {
     .then((res) => {
       dispatch({
         type: GET_HOME_LOAN_PRODUCTS,
-        payload: res.data.data,
+        payload: res.data,
       });
     })
     .catch((err) => {
