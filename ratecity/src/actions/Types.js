@@ -1,2 +1,1 @@
-export const DEFAULT = "DEFAULT";
 export const GET_HOME_LOAN_PRODUCTS = "GET_HOME_LOAN_PRODUCTS";
