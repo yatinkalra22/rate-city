@@ -1,3 +1,83 @@
-.LoanProductList-container{
-    height: 400px;
+.LoanProductList-container {
+  padding: 40px 0;
+}
+.LoanProductList-container .single-container {
+  background-color: white;
+  height: fit-content;
+  width: 300px;
+  box-shadow: 5px 10px 10px #888888;
+  padding: 8px;
+}
+
+.single-container .headline {
+  border-bottom: 1px solid var(--secondary-color);
+  padding-bottom: 8px;
+  font-weight: 500;
+}
+.single-container .rating-box {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--secondary-color);
+  padding-bottom: 8px;
+}
+.single-container .rating-title {
+  text-align: center;
+  font-weight: 300;
+  font-size: 15px;
+}
+.single-container .rating-percentage {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 20px;
+}
+.single-container .features {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--secondary-color);
+}
+.single-container .each-feature {
+  display: flex;
+  padding: 5px 0;
+}
+.single-container .feature-text {
+  font-weight: 500;
+  font-size: 15px;
+  padding: 0 0 0 5px;
+}
+.single-container .compare-with-info {
+  display: flex;
+  padding: 5px 0;
+  justify-content: space-between;
+}
+.single-container .checkbox-with-message {
+  display: flex;
+}
+
+.single-container .checkbox {
+  margin: 5px 5px 0 0;
+}
+.single-container .info-text {
+  font-weight: 500;
+  padding-bottom: 1px;
+  border-bottom: 1.5px solid black;
+  border-block-style: initial;
+}
+.single-container .go-to-site-container {
+  display: flex;
+  padding: 15px 0;
+  justify-content: space-between;
+}
+.single-container .go-to-profile-image {
+  margin: 10px;
+}
+
+.single-container .go-to-site-button {
+  display: flex;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #13b45a;
+  color: white;
+}
+.single-container .right-arrow-icon {
+  padding: 0 5px;
 }
