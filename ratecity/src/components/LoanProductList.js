@@ -45,16 +45,10 @@ export class LoanProductList extends Component {
   render() {
     const { isChecked, currentPage } = this.state;
     const { homeloan_products, selectedMenuOption } = this.props;
-    console.log("homeloan_products: ", homeloan_products);
-    console.log("selectedMenuOption: ", selectedMenuOption);
 
     let fliteredHomeLoanList = [];
     if (homeloan_products.hits) {
       fliteredHomeLoanList = homeloan_products.hits.filter((product) => {
-        console.log(
-          "product.isRefinanceAvailable ",
-          product.isRefinanceAvailable
-        );
         return selectedMenuOption === "REFINANCE"
           ? product.isRefinanceAvailable === true
           : selectedMenuOption === "FIRST HOME BUYER"
@@ -105,7 +99,7 @@ export class LoanProductList extends Component {
         ) : (
           <div className="list-of-products">
             {/* Single container */}
-            {fliteredHomeLoanList ? (
+            {fliteredHomeLoanList.length > 0 ? (
               // mapping the product list received from backend
               fliteredHomeLoanList.map((each_product, index) => {
                 return (
