@@ -4,8 +4,8 @@
 
 .LoanProductList-container .pagintion-container {
   display: flex;
-  justify-content: flex-end;
-  padding-right: 5%;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .LoanProductList-container .pagintion-container > span {
   padding: 0 10px;
@@ -16,9 +16,8 @@
 }
 .LoanProductList-container .pagination-button {
   color: white;
-  background-color: #13b45a;
+  background-color: #4adbc8;
   border-radius: 5px;
-  /* padding: 5px 20px; */
   height: 30px;
   padding: 5px;
   text-align: center;
