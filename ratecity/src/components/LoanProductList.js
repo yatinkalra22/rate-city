@@ -46,101 +46,113 @@ export class LoanProductList extends Component {
     return (
       <div className="LoanProductList-container">
         {/* Pagination Code */}
-        <div className="pagintion-container">
-          {currentPage > 1 ? (
-            <div
-              onClick={this.decrementPageNumber}
-              className="pagination-button"
-            >
-              Previous
-            </div>
-          ) : (
-            <span className="faded-text">Previous</span>
-          )}
-          <span>{currentPage} 0f 4</span>
-          {currentPage < 4 ? (
-            <div
-              onClick={this.incrementPageNumber}
-              className="pagination-button"
-            >
-              Next
-            </div>
-          ) : (
-            <span className="faded-text">Next</span>
-          )}
-        </div>
+        {/* If there is any products list then only showing the pagination */}
+        {this.props.homeloan_products.length > 0 ? (
+          <div className="pagintion-container">
+            {/* If showing first page then previous button will be faded or text */}
+            {currentPage > 1 ? (
+              <div
+                onClick={this.decrementPageNumber}
+                className="pagination-button"
+              >
+                Previous
+              </div>
+            ) : (
+              <span className="faded-text">Previous</span>
+            )}
+            {/* showing the current page */}
+            <span>{currentPage} 0f 4</span>
+            {/* If showing last page then Next button will be faded or text */}
+            {currentPage < 4 ? (
+              <div
+                onClick={this.incrementPageNumber}
+                className="pagination-button"
+              >
+                Next
+              </div>
+            ) : (
+              <span className="faded-text">Next</span>
+            )}
+          </div>
+        ) : null}
 
         <div className="list-of-products">
           {/* Single container */}
-          {this.props.homeloan_products.hits
-            ? this.props.homeloan_products.hits.map((each_product, index) => {
-                return (
-                  <div className="single-container" key={index}>
-                    <div className="headline">{each_product.name}</div>
-                    {/* Rating Container */}
-                    <div className="rating-box">
-                      <div>
-                        <div className="rating-title">Advertised rate</div>
-                        <div className="rating-percentage">
-                          {each_product.advertisedRate}%
-                        </div>
-                      </div>
-                      <div>
-                        <div className="rating-title">Comparison rate</div>
-                        <div className="rating-percentage">
-                          {each_product.comparisonRate}%
-                        </div>
+          {this.props.homeloan_products.hits ? (
+            // mapping the product list received from backend
+            this.props.homeloan_products.hits.map((each_product, index) => {
+              return (
+                <div className="single-container" key={index}>
+                  <div className="headline">{each_product.name}</div>
+                  {/* Rating Container */}
+                  <div className="rating-box">
+                    <div>
+                      <div className="rating-title">Advertised rate</div>
+                      <div className="rating-percentage">
+                        {each_product.advertisedRate}%
                       </div>
                     </div>
-                    {/* List of features */}
-                    <div className="features">
-                      {each_product.pros
-                        ? each_product.pros.map((pro, index) => {
-                            return (
-                              <div className="each-feature" key={index}>
-                                <img src={correctTick} height="20px" alt="_/" />
-                                <div className="feature-text">{pro}</div>
-                              </div>
-                            );
-                          })
-                        : null}
-                    </div>
-                    {/* Compare and more info*/}
-                    <div className="compare-with-info">
-                      <div className="checkbox-with-message">
-                        <input
-                          type="checkbox"
-                          checked={isChecked}
-                          onChange={this.toggleChange}
-                          className="checkbox"
-                        />
-                        <div>Compare</div>
-                      </div>
-                      <div className="info-text">More information</div>
-                    </div>
-                    <div className="go-to-site-container">
-                      <img
-                        className="go-to-profile-image"
-                        src={each_product.company.logo}
-                        alt="Company Name"
-                        height="30px"
-                        width="125px"
-                      />
-
-                      <div className="go-to-site-button">
-                        <div>Go to Site</div>
-                        <img
-                          className="right-arrow-icon"
-                          src={rightArrow}
-                          height="18px"
-                          alt="->"
-                        />
+                    <div>
+                      <div className="rating-title">Comparison rate</div>
+                      <div className="rating-percentage">
+                        {each_product.comparisonRate}%
                       </div>
                     </div>
                   </div>
-                );
-              })
-            : null}
+                  {/* List of features */}
+                  <div className="features">
+                    {/* mapping the products */}
+                    {each_product.pros
+                      ? each_product.pros.map((pro, index) => {
+                          return (
+                            <div className="each-feature" key={index}>
+                              <img src={correctTick} height="20px" alt="_/" />
+                              <div className="feature-text">{pro}</div>
+                            </div>
+                          );
+                        })
+                      : null}
+                  </div>
+                  {/* Compare and more info*/}
+                  <div className="compare-with-info">
+                    <div className="checkbox-with-message">
+                      <input
+                        type="checkbox"
+                        checked={isChecked}
+                        onChange={this.toggleChange}
+                        className="checkbox"
+                      />
+                      <div>Compare</div>
+                    </div>
+                    <div className="info-text">More information</div>
+                  </div>
+                  <div className="go-to-site-container">
+                    <img
+                      className="go-to-profile-image"
+                      src={each_product.company.logo}
+                      alt="Company Name"
+                      height="30px"
+                      width="125px"
+                    />
+
+                    <div className="go-to-site-button">
+                      <div>Go to Site</div>
+                      <img
+                        className="right-arrow-icon"
+                        src={rightArrow}
+                        height="18px"
+                        alt="->"
+                      />
+                    </div>
+                  </div>
+                </div>
+              );
+            })
+          ) : (
+            <div className="no-products-found">
+              No products found or check your internet connection please
+            </div>
+          )}
         </div>
       </div>
     );

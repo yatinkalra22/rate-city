@@ -1,5 +1,5 @@
 .LoanProductList-container {
-  padding: 40px 0;
+  padding: 15px 0;
 }
 
 .LoanProductList-container .pagintion-container {
@@ -30,6 +30,7 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .LoanProductList-container .single-container {
   background-color: white;
   height: 400px;
@@ -114,4 +115,8 @@
 }
 .single-container .right-arrow-icon {
   padding: 0 5px;
+}
+
+.LoanProductList-container .no-products-found {
+  margin: 10% 0;
 }
