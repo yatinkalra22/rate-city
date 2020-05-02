@@ -5,17 +5,24 @@
 .LoanProductList-container .pagintion-container {
   display: flex;
   justify-content: flex-end;
-  padding-right: 70px;
+  padding-right: 5%;
+}
+.LoanProductList-container .pagintion-container > span {
+  padding: 0 10px;
+  margin: 5px 5px;
 }
 .LoanProductList-container .faded-text {
   font-weight: 100;
 }
 .LoanProductList-container .pagination-button {
   color: white;
-  background-color: blue;
-}
-.LoanProductList-container .pagintion-container > div {
-  padding: 0 20px;
+  background-color: #13b45a;
+  border-radius: 5px;
+  /* padding: 5px 20px; */
+  height: 30px;
+  padding: 5px;
+  text-align: center;
+  width: 80px;
 }
 
 .LoanProductList-container .list-of-products {

@@ -43,18 +43,28 @@ export class LoanProductList extends Component {
 
   render() {
     const { isChecked, currentPage } = this.state;
-    console.log(this.props.homeloan_products);
     return (
       <div className="LoanProductList-container">
+        {/* Pagination Code */}
         <div className="pagintion-container">
           {currentPage > 1 ? (
-            <button onClick={this.decrementPageNumber}>Previous</button>
+            <div
+              onClick={this.decrementPageNumber}
+              className="pagination-button"
+            >
+              Previous
+            </div>
           ) : (
             <span className="faded-text">Previous</span>
           )}
-          <div>{currentPage} 0f 4</div>
+          <span>{currentPage} 0f 4</span>
           {currentPage < 4 ? (
-            <button onClick={this.incrementPageNumber}>Next</button>
+            <div
+              onClick={this.incrementPageNumber}
+              className="pagination-button"
+            >
+              Next
+            </div>
           ) : (
             <span className="faded-text">Next</span>
           )}
