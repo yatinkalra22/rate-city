@@ -74,12 +74,12 @@
   justify-content: space-between;
 }
 .single-container .go-to-profile-image {
-  margin: 10px;
+  margin: 12px 10px 12px 0;
 }
 
 .single-container .go-to-site-button {
   display: flex;
-  padding: 10px 20px;
+  padding: 15px 20px;
   border-radius: 5px;
   background-color: #13b45a;
   color: white;
