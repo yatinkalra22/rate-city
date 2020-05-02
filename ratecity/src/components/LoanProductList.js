@@ -134,8 +134,12 @@ export class LoanProductList extends Component {
                       height="30px"
                       width="125px"
                     />
-
-                    <div className="go-to-site-button">
+                    {/* added link of product site  */}
+                    <a
+                      className="go-to-site-button"
+                      href={each_product.gotoSiteUrl}
+                      target="_blank"
+                    >
                       <div>Go to Site</div>
                       <img
                         className="right-arrow-icon"
@@ -143,14 +147,14 @@ export class LoanProductList extends Component {
                         height="18px"
                         alt="->"
                       />
-                    </div>
+                    </a>
                   </div>
                 </div>
               );
             })
           ) : (
             <div className="no-products-found">
-              No products found or check your internet connection please
+              No product found or please check your internet connection.
             </div>
           )}
         </div>
