@@ -9,6 +9,7 @@ export class LoanProductList extends Component {
   state = {
     isChecked: false,
     comparedCheckBox: [],
+    currentPage: 1,
   };
 
   componentDidMount() {
@@ -21,17 +22,50 @@ export class LoanProductList extends Component {
     });
   };
 
-  render() {
-    const { isChecked } = this.state;
+  incrementPageNumber = async () => {
+    const { currentPage } = this.state;
+    if (currentPage < 4) {
+      this.setState({
+        currentPage: currentPage + 1,
+      });
+      await this.props.getHomeLoanProducts(currentPage);
+    }
+  };
+  decrementPageNumber = async () => {
+    const { currentPage } = this.state;
+    if (currentPage > 1) {
+      this.setState({
+        currentPage: currentPage - 1,
+      });
+      await this.props.getHomeLoanProducts(currentPage);
+    }
+  };
 
+  render() {
+    const { isChecked, currentPage } = this.state;
+    console.log(this.props.homeloan_products);
     return (
       <div className="LoanProductList-container">
+        <div className="pagintion-container">
+          {currentPage > 1 ? (
+            <button onClick={this.decrementPageNumber}>Previous</button>
+          ) : (
+            <span className="faded-text">Previous</span>
+          )}
+          <div>{currentPage} 0f 4</div>
+          {currentPage < 4 ? (
+            <button onClick={this.incrementPageNumber}>Next</button>
+          ) : (
+            <span className="faded-text">Next</span>
+          )}
+        </div>
+
         <div className="list-of-products">
           {/* Single container */}
           {this.props.homeloan_products.hits
-            ? this.props.homeloan_products.hits.map((each_product) => {
+            ? this.props.homeloan_products.hits.map((each_product, index) => {
                 return (
-                  <div className="single-container">
+                  <div className="single-container" key={index}>
                     <div className="headline">{each_product.name}</div>
                     {/* Rating Container */}
                     <div className="rating-box">
@@ -51,9 +85,9 @@ export class LoanProductList extends Component {
                     {/* List of features */}
                     <div className="features">
                       {each_product.pros
-                        ? each_product.pros.map((pro) => {
+                        ? each_product.pros.map((pro, index) => {
                             return (
-                              <div className="each-feature">
+                              <div className="each-feature" key={index}>
                                 <img src={correctTick} height="20px" alt="_/" />
                                 <div className="feature-text">{pro}</div>
                               </div>
