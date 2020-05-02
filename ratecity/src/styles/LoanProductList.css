@@ -7,21 +7,25 @@
   justify-content: center;
   flex-wrap: wrap;
 }
-.LoanProductList-container .pagintion-container > span {
-  padding: 0 10px;
-  margin: 5px 5px;
+
+.LoanProductList-container .faded-text,
+.pagination-button {
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid #4adbc8;
+  padding: 5px;
+  height: 30px;
+  text-align: center;
+  width: 80px;
 }
 .LoanProductList-container .faded-text {
   font-weight: 100;
+  border: 1px solid #4adbc8;
 }
+
 .LoanProductList-container .pagination-button {
   color: white;
   background-color: #4adbc8;
-  border-radius: 5px;
-  height: 30px;
-  padding: 5px;
-  text-align: center;
-  width: 80px;
 }
 
 .LoanProductList-container .list-of-products {

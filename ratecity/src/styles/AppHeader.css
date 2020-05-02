@@ -1,5 +1,6 @@
 .App-header-container {
   border-bottom: 1px solid lightblue;
+  height: 20%;
 }
 .App-header-container .headline-text {
   font-size: 15px;

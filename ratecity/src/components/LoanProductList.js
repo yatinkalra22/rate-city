@@ -44,11 +44,33 @@ export class LoanProductList extends Component {
 
   render() {
     const { isChecked, currentPage } = this.state;
+    const { homeloan_products, selectedMenuOption } = this.props;
+    console.log("homeloan_products: ", homeloan_products);
+    console.log("selectedMenuOption: ", selectedMenuOption);
+
+    let fliteredHomeLoanList = [];
+    if (homeloan_products.hits) {
+      fliteredHomeLoanList = homeloan_products.hits.filter((product) => {
+        console.log(
+          "product.isRefinanceAvailable ",
+          product.isRefinanceAvailable
+        );
+        return selectedMenuOption === "REFINANCE"
+          ? product.isRefinanceAvailable === true
+          : selectedMenuOption === "FIRST HOME BUYER"
+          ? product.isFirstHomeBuyersAvailable === true
+          : selectedMenuOption === "NVESTOR"
+          ? product.investmentPurpose === true
+          : true;
+      });
+    }
+    console.log("fliteredHomeLoanList: ", fliteredHomeLoanList);
+
     return (
       <div className="LoanProductList-container">
         {/* Pagination Code */}
         {/* If there is any products list then only showing the pagination */}
-        {this.props.homeloan_products.hits ? (
+        {fliteredHomeLoanList ? (
           <div className="pagintion-container">
             {/* If showing first page then previous button will be faded or text */}
             {currentPage > 1 ? (
@@ -62,7 +84,9 @@ export class LoanProductList extends Component {
               <span className="faded-text">Previous</span>
             )}
             {/* showing the current page */}
-            <span>{currentPage} 0f 4</span>
+            <span style={{ padding: "0 10px", margin: "5px 5px" }}>
+              {currentPage} of 4
+            </span>
             {/* If showing last page then Next button will be faded or text */}
             {currentPage < 4 ? (
               <div
@@ -81,9 +105,9 @@ export class LoanProductList extends Component {
         ) : (
           <div className="list-of-products">
             {/* Single container */}
-            {this.props.homeloan_products.hits ? (
+            {fliteredHomeLoanList ? (
               // mapping the product list received from backend
-              this.props.homeloan_products.hits.map((each_product, index) => {
+              fliteredHomeLoanList.map((each_product, index) => {
                 return (
                   <div className="single-container" key={index}>
                     <div className="headline">{each_product.name}</div>
