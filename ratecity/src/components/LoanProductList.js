@@ -3,7 +3,7 @@ import "../styles/LoanProductList.css";
 import correctTick from "../assests/images/correct-tick.png";
 import rightArrow from "../assests/images/right-arrow.png";
 import { connect } from "react-redux";
-import Loader from "react-loader-spinner";
+import Spinner from "./Spinner";
 import { getHomeLoanProducts } from "../actions/HomeLoanProducts";
 
 export class LoanProductList extends Component {
@@ -77,28 +77,7 @@ export class LoanProductList extends Component {
           </div>
         ) : null}
         {this.props.isloading ? (
-          <div
-            className="loader-position"
-            style={{
-              height: 400 + "px",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <div>
-              <Loader type="Oval" color="#615756" height="50px" width="200px" />
-              <span
-                style={{
-                  marginTop: "40px",
-                  color: "#615756",
-                }}
-              >
-                Loading the product list...
-              </span>
-            </div>
-          </div>
+          <Spinner />
         ) : (
           <div className="list-of-products">
             {/* Single container */}
