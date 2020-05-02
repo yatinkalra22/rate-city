@@ -8,7 +8,6 @@ import { getHomeLoanProducts } from "../actions/HomeLoanProducts";
 
 export class LoanProductList extends Component {
   state = {
-    isChecked: false,
     comparedCheckBox: [],
     currentPage: 1,
   };
@@ -17,10 +16,22 @@ export class LoanProductList extends Component {
     this.props.getHomeLoanProducts(1);
   }
 
-  toggleChange = () => {
-    this.setState({
-      isChecked: !this.state.isChecked,
-    });
+  toggleChange = (uuid) => {
+    const { comparedCheckBox } = this.state;
+    let newComparedCheckBox = comparedCheckBox;
+    if (comparedCheckBox.length < 3) {
+      if (!newComparedCheckBox.includes(uuid)) {
+        newComparedCheckBox.push(uuid);
+        this.setState({
+          comparedCheckBox: newComparedCheckBox,
+        });
+      } else {
+        newComparedCheckBox.splice(newComparedCheckBox.indexOf(uuid), 1);
+        this.setState({
+          comparedCheckBox: newComparedCheckBox,
+        });
+      }
+    }
   };
 
   incrementPageNumber = async () => {
@@ -43,7 +54,7 @@ export class LoanProductList extends Component {
   };
 
   render() {
-    const { isChecked, currentPage } = this.state;
+    const { comparedCheckBox, currentPage } = this.state;
     const { homeloan_products, selectedMenuOption } = this.props;
 
     let fliteredHomeLoanList = [];
@@ -58,7 +69,6 @@ export class LoanProductList extends Component {
           : true;
       });
     }
-    console.log("fliteredHomeLoanList: ", fliteredHomeLoanList);
 
     return (
       <div className="LoanProductList-container">
@@ -139,8 +149,14 @@ export class LoanProductList extends Component {
                       <div className="checkbox-with-message">
                         <input
                           type="checkbox"
-                          checked={isChecked}
-                          onChange={this.toggleChange}
+                          checked={
+                            comparedCheckBox.length > 0
+                              ? this.state.comparedCheckBox.includes(
+                                  each_product.uuid
+                                )
+                              : false
+                          }
+                          onChange={() => this.toggleChange(each_product.uuid)}
                           className="checkbox"
                         />
                         <div>Compare</div>
