@@ -9,7 +9,8 @@
 }
 
 .LoanProductList-container .faded-text,
-.pagination-button {
+.pagination-button,
+.search-button {
   border-radius: 5px;
   padding: 5px;
   border: 1px solid #4adbc8;
@@ -23,7 +24,8 @@
   border: 1px solid #4adbc8;
 }
 
-.LoanProductList-container .pagination-button {
+.LoanProductList-container .pagination-button,
+.search-button {
   color: white;
   background-color: #4adbc8;
 }
@@ -124,4 +126,47 @@
 .LoanProductList-container .no-products-found {
   margin: 20% 0;
   text-align: center;
+}
+
+.visualization-container {
+  display: flex;
+}
+.pagination-graph-container {
+  justify-content: center;
+}
+
+.visualization-container {
+  justify-content: center;
+  padding: 10px 0 0 0;
+}
+.visualization-container .visualization-checkbox {
+  margin: 5px;
+}
+.graph-container {
+  display: flex;
+  justify-content: center;
+}
+.graph-container .interst-rate-input,
+.search-button {
+  padding: 5px;
+  margin: 20px 0;
+}
+.interst-rate-input {
+  border-radius: 5px;
+}
+.graph-container .search-button {
+  margin-left: 10px;
+}
+
+@media (min-width: 580px) {
+  .pagination-graph-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .visualization-container {
+    position: absolute;
+    right: 100px;
+    padding: 5px 0 0 0;
+  }
 }
