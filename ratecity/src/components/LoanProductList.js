@@ -9,23 +9,52 @@ import { getHomeLoanProducts } from "../actions/HomeLoanProducts";
 export class LoanProductList extends Component {
   state = {
     comparedCheckBox: [],
+    compareCheckBoxNumber: 3,
     currentPage: 1,
+    maximumPage: 4,
+    minimumPage: 1,
   };
 
+  // calling the api to fetch first page
   componentDidMount() {
-    this.props.getHomeLoanProducts(1);
+    this.props.getHomeLoanProducts(this.state.currentPage);
   }
 
+  // incrementing the page count
+  incrementPageNumber = async () => {
+    const { currentPage, maximumPage } = this.state;
+    if (currentPage < maximumPage) {
+      this.setState({
+        currentPage: currentPage + 1,
+      });
+      await this.props.getHomeLoanProducts(currentPage);
+    }
+  };
+
+  // decrementing the page count
+  decrementPageNumber = async () => {
+    const { currentPage, minimumPage } = this.state;
+    if (currentPage > minimumPage) {
+      this.setState({
+        currentPage: currentPage - 1,
+      });
+      await this.props.getHomeLoanProducts(currentPage);
+    }
+  };
+
+  // when compare button is pressed then, then checkbox is set to be true, only for 3 check box will be selected.
   toggleChange = (uuid) => {
-    const { comparedCheckBox } = this.state;
+    const { comparedCheckBox, compareCheckBoxNumber } = this.state;
     let newComparedCheckBox = comparedCheckBox;
-    if (comparedCheckBox.length < 3) {
+    if (comparedCheckBox.length < compareCheckBoxNumber) {
       if (!newComparedCheckBox.includes(uuid)) {
+        // pushing only 3 selected checkbox to the array
         newComparedCheckBox.push(uuid);
         this.setState({
           comparedCheckBox: newComparedCheckBox,
         });
       } else {
+        // if already present then removing from the array
         newComparedCheckBox.splice(newComparedCheckBox.indexOf(uuid), 1);
         this.setState({
           comparedCheckBox: newComparedCheckBox,
@@ -34,29 +63,10 @@ export class LoanProductList extends Component {
     }
   };
 
-  incrementPageNumber = async () => {
-    const { currentPage } = this.state;
-    if (currentPage < 4) {
-      this.setState({
-        currentPage: currentPage + 1,
-      });
-      await this.props.getHomeLoanProducts(currentPage);
-    }
-  };
-  decrementPageNumber = async () => {
-    const { currentPage } = this.state;
-    if (currentPage > 1) {
-      this.setState({
-        currentPage: currentPage - 1,
-      });
-      await this.props.getHomeLoanProducts(currentPage);
-    }
-  };
-
   render() {
     const { comparedCheckBox, currentPage } = this.state;
     const { homeloan_products, selectedMenuOption } = this.props;
-
+    // api response is filtered based on the menu selected item
     let fliteredHomeLoanList = [];
     if (homeloan_products.hits) {
       fliteredHomeLoanList = homeloan_products.hits.filter((product) => {
@@ -74,9 +84,9 @@ export class LoanProductList extends Component {
       <div className="LoanProductList-container">
         {/* Pagination Code */}
         {/* If there is any products list then only showing the pagination */}
-        {fliteredHomeLoanList ? (
+        {fliteredHomeLoanList.length > 0 ? (
           <div className="pagintion-container">
-            {/* If showing first page then previous button will be faded or text */}
+            {/* If showing first page then previous button will be faded/text */}
             {currentPage > 1 ? (
               <div
                 onClick={this.decrementPageNumber}
@@ -91,7 +101,7 @@ export class LoanProductList extends Component {
             <span style={{ padding: "0 10px", margin: "5px 5px" }}>
               {currentPage} of 4
             </span>
-            {/* If showing last page then Next button will be faded or text */}
+            {/* If showing last page then Next button will be faded/text */}
             {currentPage < 4 ? (
               <div
                 onClick={this.incrementPageNumber}
@@ -104,6 +114,7 @@ export class LoanProductList extends Component {
             )}
           </div>
         ) : null}
+        {/* if api is called then showing the loader */}
         {this.props.isloading ? (
           <Spinner />
         ) : (
@@ -171,7 +182,7 @@ export class LoanProductList extends Component {
                         height="30px"
                         width="125px"
                       />
-                      {/* added link of product site  */}
+                      {/* added link of product site, when clicked it will be redirected  */}
                       <a
                         className="go-to-site-button"
                         href={each_product.gotoSiteUrl}
@@ -191,6 +202,7 @@ export class LoanProductList extends Component {
                 );
               })
             ) : (
+              // showing message whc=en api response is empty
               <div className="no-products-found">
                 No product found or please check your internet connection.
               </div>
@@ -202,6 +214,7 @@ export class LoanProductList extends Component {
   }
 }
 
+// mapping redux store state
 const mapStateToProps = (state) => ({
   homeloan_products: state.homeLoanProductsReduer.homeloan_products,
   isloading: state.LoadingReducer.isLoading,

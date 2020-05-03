@@ -14,17 +14,15 @@ export default class Spinner extends Component {
           alignItems: "center",
         }}
       >
-        <div>
-          <Loader type="Oval" color="#615756" height="50px" width="200px" />
-          <span
-            style={{
-              marginTop: "40px",
-              color: "#615756",
-            }}
-          >
-            Loading the product list...
-          </span>
-        </div>
+        <Loader type="Oval" color="#615756" height="80px" width="250px" />
+        <span
+          style={{
+            marginTop: "10px",
+            color: "#615756",
+          }}
+        >
+          Loading the product list...
+        </span>
       </div>
     );
   }

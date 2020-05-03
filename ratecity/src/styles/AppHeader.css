@@ -3,7 +3,7 @@
   height: 20%;
 }
 .App-header-container .headline-text {
-  font-size: 15px;
+  font-size: 18px;
   text-align: center;
   font-weight: 600;
   padding: 10px;
@@ -13,6 +13,8 @@
   font-size: 10px;
   justify-content: space-between;
   color: #333333;
+  font-size: 14px;
+    padding: 10px;
 }
 
 .App-header-container .selectedMenu {
@@ -29,8 +31,8 @@
     justify-content: space-between;
   }
   .App-header-container .headline-menu {
-    font-size: 12px;
-    padding: 10px;
+    font-size: 15px;
+    
   }
   .App-header-container .headline-menu > div {
     padding: 0 5px;
