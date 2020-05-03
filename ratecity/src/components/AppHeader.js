@@ -10,7 +10,7 @@ export default class AppHeader extends Component {
       "REFINANCE",
       // "FIXED RATE",
       "FIRST HOME BUYER",
-      "NVESTOR",
+      "INVESTOR",
       // "NEXT HOME BUYER",
     ],
   };

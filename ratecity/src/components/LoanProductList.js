@@ -74,7 +74,7 @@ export class LoanProductList extends Component {
           ? product.isRefinanceAvailable === true
           : selectedMenuOption === "FIRST HOME BUYER"
           ? product.isFirstHomeBuyersAvailable === true
-          : selectedMenuOption === "NVESTOR"
+          : selectedMenuOption === "INVESTOR"
           ? product.investmentPurpose === true
           : true;
       });

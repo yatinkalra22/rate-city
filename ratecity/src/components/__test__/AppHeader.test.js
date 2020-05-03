@@ -17,7 +17,7 @@ describe("AppHeader Component", () => {
     expect(wrapper.find("#ALL").text()).toBe("ALL");
     expect(wrapper.find("#REFINANCE").text()).toBe("REFINANCE");
     // expect(wrapper.find("#FIRST HOME BUYER").text()).toBe("FIRST HOME BUYER");
-    expect(wrapper.find("#NVESTOR").text()).toBe("NVESTOR");
+    expect(wrapper.find("#INVESTOR").text()).toBe("INVESTOR");
   });
 
   it("should have a default state selected value and headerMenuItems", () => {
@@ -32,7 +32,7 @@ describe("AppHeader Component", () => {
     expect(wrapper.state().selectedMenuOption).toBe("REFINANCE");
     // wrapper.find("#FIRST HOME BUYER").simulate("click");
     // expect(wrapper.state().selectedMenuOption).toBe("FIRST HOME BUYER");
-    wrapper.find("#NVESTOR").simulate("click");
-    expect(wrapper.state().selectedMenuOption).toBe("NVESTOR");
+    wrapper.find("#INVESTOR").simulate("click");
+    expect(wrapper.state().selectedMenuOption).toBe("INVESTOR");
   });
 });
