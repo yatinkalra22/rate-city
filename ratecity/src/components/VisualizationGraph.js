@@ -15,12 +15,14 @@ export default class VisualizationGraph extends Component {
           this.props.interestRate >
           this.props.fliteredHomeLoanList[i].comparisonRate
         ) {
-          data.colors.push("red");
+          // greater in red color
+          data.colors.push("#C84630");
         } else if (
+          // less in green color
           this.props.interestRate <
           this.props.fliteredHomeLoanList[i].comparisonRate
         ) {
-          data.colors.push("green");
+          data.colors.push("#44AF69");
         } else {
           data.colors.push("blue");
         }
@@ -43,7 +45,7 @@ export default class VisualizationGraph extends Component {
                 borderColor: "#5B83C3",
                 borderWidth: 2,
                 pointBackgroundColor: data ? data.colors : "#4adbc8",
-                pointRadius: 8,
+                pointRadius: 6,
               },
             ],
           }}
