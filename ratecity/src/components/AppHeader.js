@@ -4,9 +4,9 @@ import LoanProductList from "./LoanProductList";
 
 export default class AppHeader extends Component {
   state = {
-    selectedMenuOption: "All",
+    selectedMenuOption: "ALL",
     headerMenuItems: [
-      "All",
+      "ALL",
       "REFINANCE",
       // "FIXED RATE",
       "FIRST HOME BUYER",
