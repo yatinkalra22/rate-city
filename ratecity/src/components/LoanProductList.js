@@ -46,20 +46,20 @@ export class LoanProductList extends Component {
   toggleChange = (uuid) => {
     const { comparedCheckBox, compareCheckBoxNumber } = this.state;
     let newComparedCheckBox = comparedCheckBox;
-    if (comparedCheckBox.length < compareCheckBoxNumber) {
-      if (!newComparedCheckBox.includes(uuid)) {
+    if (!newComparedCheckBox.includes(uuid)) {
+      if (comparedCheckBox.length < compareCheckBoxNumber) {
         // pushing only 3 selected checkbox to the array
         newComparedCheckBox.push(uuid);
         this.setState({
           comparedCheckBox: newComparedCheckBox,
         });
-      } else {
-        // if already present then removing from the array
-        newComparedCheckBox.splice(newComparedCheckBox.indexOf(uuid), 1);
-        this.setState({
-          comparedCheckBox: newComparedCheckBox,
-        });
       }
+    } else {
+      // if already present then removing from the array
+      newComparedCheckBox.splice(newComparedCheckBox.indexOf(uuid), 1);
+      this.setState({
+        comparedCheckBox: newComparedCheckBox,
+      });
     }
   };
 
@@ -112,6 +112,7 @@ export class LoanProductList extends Component {
             ) : (
               <span className="faded-text">Next</span>
             )}
+            <div>Visualization</div>
           </div>
         ) : null}
         {/* if api is called then showing the loader */}
