@@ -85,19 +85,34 @@ export class LoanProductList extends Component {
       visualizationCheckBox,
       interestRate,
     } = this.state;
-    const { homeloan_products, selectedMenuOption } = this.props;
+    const { homeloan_products } = this.props;
     // api response is filtered based on the menu selected item
     let fliteredHomeLoanList = [];
     if (homeloan_products.hits) {
-      fliteredHomeLoanList = homeloan_products.hits.filter((product) => {
-        return selectedMenuOption === "REFINANCE"
-          ? product.isRefinanceAvailable === true
-          : selectedMenuOption === "FIRST HOME BUYER"
-          ? product.isFirstHomeBuyersAvailable === true
-          : selectedMenuOption === "INVESTOR"
-          ? product.investmentPurpose === true
-          : true;
-      });
+      // itertaing each products
+      for (let i = 0; i < homeloan_products.hits.length; i++) {
+        // getting the index of the prodcuts present in the fliteredHomeLoanList
+        let index = fliteredHomeLoanList.findIndex(function (product) {
+          return (
+            product.company.slug === homeloan_products.hits[i].company.slug
+          );
+        });
+        // when the product does not exists in fliteredHomeLoanList then adding it.
+        if (index === -1) {
+          fliteredHomeLoanList.push(homeloan_products.hits[i]);
+        }
+        // if product already exists then checking the comparisonRate.
+        // when the new product is greater, then remving the existing one adding it.
+        else {
+          if (
+            fliteredHomeLoanList[index].comparisonRate <
+            homeloan_products.hits[i].comparisonRate
+          ) {
+            fliteredHomeLoanList.splice(index, 1);
+            fliteredHomeLoanList.push(homeloan_products.hits[i]);
+          }
+        }
+      }
     }
 
     return (
