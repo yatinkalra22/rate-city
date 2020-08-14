@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/rate-city/static/css/main.d3e64763.chunk.css",
+    "main.js": "/rate-city/static/js/main.0bc394b9.chunk.js",
+    "main.js.map": "/rate-city/static/js/main.0bc394b9.chunk.js.map",
+    "runtime-main.js": "/rate-city/static/js/runtime-main.f20bf8db.js",
+    "runtime-main.js.map": "/rate-city/static/js/runtime-main.f20bf8db.js.map",
+    "static/js/2.51d11007.chunk.js": "/rate-city/static/js/2.51d11007.chunk.js",
+    "static/js/2.51d11007.chunk.js.map": "/rate-city/static/js/2.51d11007.chunk.js.map",
+    "index.html": "/rate-city/index.html",
+    "precache-manifest.79be22cf38978141e33691a872f93c6a.js": "/rate-city/precache-manifest.79be22cf38978141e33691a872f93c6a.js",
+    "service-worker.js": "/rate-city/service-worker.js",
+    "static/css/main.d3e64763.chunk.css.map": "/rate-city/static/css/main.d3e64763.chunk.css.map",
+    "static/js/2.51d11007.chunk.js.LICENSE.txt": "/rate-city/static/js/2.51d11007.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f20bf8db.js",
+    "static/js/2.51d11007.chunk.js",
+    "static/css/main.d3e64763.chunk.css",
+    "static/js/main.0bc394b9.chunk.js"
+  ]
+}

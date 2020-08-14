@@ -1,80 +1,68 @@
-# RateCity Developer Test
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Your task is to build a ReactJS powered 
+## Available Scripts
 
-Test 1: 
-Product listing Page:
-- request a list of items using JSON REST api detailed below.
-- render the table of results to page
-- add ability to paginate the collection
+In the project directory, you can run:
 
-========================================= OR ========================================
+### `npm start`
 
-Test 2:
-Compare Rate Component
-- Allow user to input interest rates
-- Render graph to show where the user entered rate is compared against the products returned by the APIS
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-========================================= OR =========================================
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-Test 3:
-Build Similar Products component as per desing provided here :
-- Component needs to be responsive
-- Data needs to come from API provided below
+### `npm test`
 
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Our expectations:
-- Redux for state management (where necessary)
-- Good component structure
-- ES6 
-- Surprise us
+### `npm run build`
 
-## Notes
-Use a starter kit of your choice.
-Feel free to use npm packages to help you achieve a result.
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Deliverable
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-#### Please don't push branches,
-Submit a pull request against this repository. Developers will review your code and ask you questions in the pull request.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-We will pull your code and execute the following commands:
-```
-npm install
-npm start
-```
-These commands should start a Node.JS server and serve your app in development mode. We expect the terminal to display a URL to see your code in browser. Recommended url is `http://localhost:3000`
+### `npm run eject`
 
-## API Detail
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-API Endpoint:<br />
-`https://blaze.ratecity.com.au/api/search/home-loans`
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Paginate by passing the page parameter:<br />
-`https://blaze.ratecity.com.au/api/search/home-loans?page=2`
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-API will return you an object that looks something like this:
-```json
-{
-  "filters": [],
-  "hits": [
-    {
-      "advertised_rate":3.88,
-      "comparison_rate":4.28,
-      "company": {
-        "supplier_reference": "LCOM",
-        "name": "loans.com.au",
-        "logo":"//cdn.ratecity.com.au/companies/logo/lcom/small_lcom_logo.png",
-        "name":"loans.com.au"
-      }
-    }
-  ],
-  "meta": {
-    "hit_count": 25,
-    "page": 1,
-    "page_count": 3,
-    "page_size": 25,
-    "total_count": 71
-  }
-}
-```
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+
+### Analyzing the Bundle Size
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+
+### Making a Progressive Web App
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+### Advanced Configuration
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `npm run build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
